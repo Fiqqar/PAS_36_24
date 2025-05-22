@@ -18,10 +18,6 @@ import com.example.pas_semestergenap.ApiService.MatchScheduleModel;
 import com.example.pas_semestergenap.ApiService.MatchScheduleResponse;
 import com.example.pas_semestergenap.MatchScheduleAdapter;
 import com.example.pas_semestergenap.R;
-import com.example.pas_semestergenap.TimAdapter;
-import com.example.pas_semestergenap.ApiService.Interface.PremierLeagueInterface;
-import com.example.pas_semestergenap.ApiService.TimModel;
-import com.example.pas_semestergenap.ApiService.TimResponse;
 
 import java.util.ArrayList;
 
@@ -46,13 +42,13 @@ public class MatchScheduleFragment extends Fragment implements MatchScheduleAdap
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_recycler_view, container, false);
+        View view = inflater.inflate(R.layout.activity_recycler_view1, container, false);
 
         rvListSchedule = view.findViewById(R.id.rvListClub);
         pbLoading = view.findViewById(R.id.pbLoading);
 
         setupRecyclerView();
-        fetchDataClub();
+        fetchMatchSchedule();
 
         return view;
     }
@@ -61,7 +57,7 @@ public class MatchScheduleFragment extends Fragment implements MatchScheduleAdap
         rvListSchedule.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
-    private void fetchDataClub() {
+    private void fetchMatchSchedule() {
         pbLoading.setVisibility(View.VISIBLE);
         rvListSchedule.setVisibility(View.GONE);
 
@@ -83,12 +79,12 @@ public class MatchScheduleFragment extends Fragment implements MatchScheduleAdap
                     rvListSchedule.setAdapter(matchScheduleAdapter);
                     rvListSchedule.setVisibility(View.VISIBLE);
                 } else {
-                    Toast.makeText(getContext(), "Failed to load data", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Gagal memuat data", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<TimResponse> call, Throwable t) {
+            public void onFailure(Call<MatchScheduleResponse> call, Throwable t) {
                 pbLoading.setVisibility(View.GONE);
                 Toast.makeText(getContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
@@ -96,8 +92,7 @@ public class MatchScheduleFragment extends Fragment implements MatchScheduleAdap
     }
 
     @Override
-    public void onItemClick(TimModel clubModel) {
-        Toast.makeText(getContext(), clubModel.getNamaClub() + " - " + clubModel.getStadion(), Toast.LENGTH_SHORT).show();
-
+    public void onItemClick(MatchScheduleModel matchModel) {
+        Toast.makeText(getContext(), matchModel.getNamaEvent() + " - " + matchModel.getDateEvent(), Toast.LENGTH_SHORT).show();
     }
 }

@@ -3,7 +3,7 @@ package com.example.pas_semestergenap.ApiService;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiClient {
+public class    ApiClient {
     private static final String BASE_URL = "https://www.thesportsdb.com";
     private static Retrofit retrofit;
 
