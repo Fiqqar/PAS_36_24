@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_premier"
         android:icon="@android:drawable/ic_menu_view"
         android:title="Premier League" />
     <item
-        android:id="@+id/nav_dashboard"
+        android:id="@+id/nav_jadwal"
         android:icon="@android:drawable/ic_menu_manage"
-        android:title="List Olahraga" />
+        android:title="Jadwal Pertandingan" />
     <item
         android:id="@+id/nav_information"
         android:icon="@android:drawable/ic_menu_info_details"
