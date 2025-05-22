@@ -1,15 +1,18 @@
 package com.example.pas_semestergenap.ApiService;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class MatchScheduleResponse {
-    private List<MatchScheduleModel> schedule;
+    @SerializedName("events")
+    private List<MatchScheduleModel> events;
 
-    public List<MatchScheduleModel> getSchedule() {
-        return schedule;
+    public List<MatchScheduleModel> getEvents() {
+        return events;
     }
 
-    public void setSchedule(List<MatchScheduleModel> schedule) {
-        this.schedule = schedule;
+    public void setEvents(List<MatchScheduleModel> events) {
+        this.events = events;
     }
 }
