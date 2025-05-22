@@ -1,5 +1,5 @@
 
-package com.example.pas_semestergenap.fragment;
+package com.example.pas_semestergenap.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
