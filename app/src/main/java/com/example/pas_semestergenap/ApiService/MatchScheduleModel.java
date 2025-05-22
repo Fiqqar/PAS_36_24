@@ -24,7 +24,7 @@ public class MatchScheduleModel {
         this.awayTeamLogo = awayTeamlogo;
     }
 
-    public String getNamaClub() {return namaEvent;}
+    public String getNamaEvent() {return namaEvent;}
 
     public String getDateEvent() {
         return dateEvent;
