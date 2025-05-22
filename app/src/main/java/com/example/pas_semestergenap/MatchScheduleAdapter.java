@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.pas_semestergenap.ApiService.MatchScheduleModel;
-import com.example.pas_semestergenap.ApiService.TimModel;
 
 import java.util.ArrayList;
 
@@ -22,7 +21,7 @@ public class MatchScheduleAdapter extends RecyclerView.Adapter<MatchScheduleAdap
     private final OnItemClickListener listener;
 
     public interface OnItemClickListener {
-        void onItemClick(TimModel clubModel);
+        void onItemClick(MatchScheduleModel matchScheduleModel);
     }
 
     public MatchScheduleAdapter(ArrayList<MatchScheduleModel> listSchedule, OnItemClickListener listener) {
@@ -41,12 +40,17 @@ public class MatchScheduleAdapter extends RecyclerView.Adapter<MatchScheduleAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MatchScheduleModel schedule = listSchedule.get(position);
-        holder.tvNamaClub.setText(schedule.getNamaEvent());
-        holder.tvStadion.setText(schedule.getDateEvent());
+        holder.tvEventName.setText(schedule.getNamaEvent());
+        holder.tvDateEvent.setText(schedule.getDateEvent());
 
         Glide.with(holder.itemView.getContext())
                 .load(schedule.getHomeTeamLogo())
-                .into(holder.ivClub);
+                .into(holder.ivHomeTeam);
+
+        Glide.with(holder.itemView.getContext())
+                .load(schedule.getAwayTeamLogo())
+                .into(holder.ivAwayTeam);
+
 
         holder.itemView.setOnClickListener(v -> listener.onItemClick(schedule));
     }
@@ -57,15 +61,17 @@ public class MatchScheduleAdapter extends RecyclerView.Adapter<MatchScheduleAdap
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvNamaClub;
-        TextView tvStadion;
-        ImageView ivClub;
+        ImageView ivHomeTeam;
+        TextView tvEventName;
+        TextView tvDateEvent;
+        ImageView ivAwayTeam;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvNamaClub = itemView.findViewById(R.id.tvNamaClub);
-            tvStadion = itemView.findViewById(R.id.tvDeskripsiClub);
-            ivClub = itemView.findViewById(R.id.ivClub);
+            ivHomeTeam = itemView.findViewById(R.id.ivHomeTeam);
+            tvEventName = itemView.findViewById(R.id.tvEventName);
+            tvDateEvent = itemView.findViewById(R.id.tvDateEvent);
+            ivAwayTeam = itemView.findViewById(R.id.ivAwayTeam);
         }
     }
 }
