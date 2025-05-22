@@ -11,21 +11,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.bumptech.glide.Glide;
+import com.example.pas_semestergenap.ApiService.MatchScheduleModel;
 import com.example.pas_semestergenap.ApiService.TimModel;
 
 import java.util.ArrayList;
 
-public class TimAdapter extends RecyclerView.Adapter<TimAdapter.ViewHolder> {
+public class MatchScheduleAdapter extends RecyclerView.Adapter<MatchScheduleAdapter.ViewHolder> {
 
-    private final ArrayList<TimModel> listClub;
+    private final ArrayList<MatchScheduleModel> listSchedule;
     private final OnItemClickListener listener;
 
     public interface OnItemClickListener {
         void onItemClick(TimModel clubModel);
     }
 
-    public TimAdapter(ArrayList<TimModel> listClub, OnItemClickListener listener) {
-        this.listClub = listClub;
+    public MatchScheduleAdapter(ArrayList<MatchScheduleModel> listSchedule, OnItemClickListener listener) {
+        this.listSchedule = listSchedule;
         this.listener = listener;
     }
 
@@ -33,26 +34,26 @@ public class TimAdapter extends RecyclerView.Adapter<TimAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_layout_premiere, parent, false);
+                .inflate(R.layout.layout_match_schedule, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        TimModel club = listClub.get(position);
-        holder.tvNamaClub.setText(club.getNamaClub());
-        holder.tvStadion.setText(club.getStadion());
+        MatchScheduleModel schedule = listSchedule.get(position);
+        holder.tvNamaClub.setText(schedule.getNamaEvent());
+        holder.tvStadion.setText(schedule.getDateEvent());
 
         Glide.with(holder.itemView.getContext())
-                .load(club.getImageUrl())
+                .load(schedule.getHomeTeamLogo())
                 .into(holder.ivClub);
 
-        holder.itemView.setOnClickListener(v -> listener.onItemClick(club));
+        holder.itemView.setOnClickListener(v -> listener.onItemClick(schedule));
     }
 
     @Override
     public int getItemCount() {
-        return listClub.size();
+        return listSchedule.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

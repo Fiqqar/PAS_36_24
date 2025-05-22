@@ -8,9 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.pas_semestergenap.R;
-
-public class LeagueList extends AppCompatActivity {
+public class RecyclerView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
