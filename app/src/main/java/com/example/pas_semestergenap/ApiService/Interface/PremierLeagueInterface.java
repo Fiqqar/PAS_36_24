@@ -1,4 +1,6 @@
-package com.example.pas_semestergenap.ApiService;
+package com.example.pas_semestergenap.ApiService.Interface;
+
+import com.example.pas_semestergenap.ApiService.TimResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
