@@ -9,7 +9,7 @@ public class MatchScheduleResponse {
         return schedule;
     }
 
-    public void setTeams(List<MatchScheduleModel> schedule) {
+    public void setSchedule(List<MatchScheduleModel> schedule) {
         this.schedule = schedule;
     }
 }
