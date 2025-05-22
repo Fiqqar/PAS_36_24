@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.pas_semestergenap.Fragment.MatchScheduleFragment;
 import com.example.pas_semestergenap.Fragment.PremiereLeagueFragment;
-import com.example.pas_semestergenap.fragment.ProfileFragment;
+import com.example.pas_semestergenap.Fragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
