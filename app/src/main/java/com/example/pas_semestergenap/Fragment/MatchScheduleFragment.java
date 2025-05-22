@@ -74,7 +74,7 @@ public class MatchScheduleFragment extends Fragment implements MatchScheduleAdap
             public void onResponse(Call<MatchScheduleResponse> call, Response<MatchScheduleResponse> response) {
                 pbLoading.setVisibility(View.GONE);
                 if (response.isSuccessful() && response.body() != null) {
-                    dataSchedule = new ArrayList<>(response.body().getSchedule());
+                    dataSchedule = new ArrayList<>(response.body().getEvents());
                     matchScheduleAdapter = new MatchScheduleAdapter(dataSchedule, MatchScheduleFragment.this);
                     rvListSchedule.setAdapter(matchScheduleAdapter);
                     rvListSchedule.setVisibility(View.VISIBLE);
