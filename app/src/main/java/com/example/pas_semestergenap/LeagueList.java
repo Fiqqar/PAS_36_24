@@ -1,4 +1,4 @@
-package com.example.bottom_nav;
+package com.example.pas_semestergenap;
 
 import android.os.Bundle;
 
