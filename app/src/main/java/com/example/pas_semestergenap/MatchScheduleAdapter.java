@@ -48,12 +48,12 @@ public class MatchScheduleAdapter extends RecyclerView.Adapter<MatchScheduleAdap
                 .load(schedule.getHomeTeamLogo())
                 .into(holder.ivClub);
 
-        holder.itemView.setOnClickListener(v -> listener.onItemClick(club));
+        holder.itemView.setOnClickListener(v -> listener.onItemClick(schedule));
     }
 
     @Override
     public int getItemCount() {
-        return listClub.size();
+        return listSchedule.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
