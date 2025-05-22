@@ -16,81 +16,107 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:orientation="horizontal"
         android:layout_gravity="center">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:gravity="center"
-            android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="177dp"
+            android:layout_height="180dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/fiq" />
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Zulfiqar Silmy Setiawan"
-                android:textSize="15dp" />
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="fiqarsilmy@gmail.com"
-                android:textSize="12dp" />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/fiq"
+                    android:layout_marginStart="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Absen 36"
-                android:textSize="15dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Zulfiqar Silmy Setiawan"
+                    android:textSize="13dp"
+                    android:layout_marginStart="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+62 877-8668-8370"
-                android:textSize="12dp" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fiqarsilmy@gmail.com"
+                    android:textSize="12dp"
+                    android:layout_marginStart="10dp"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Absen 36"
+                    android:textSize="15dp"
+                    android:layout_marginStart="10dp"/>
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/amir"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+62 877-8668-8370"
+                    android:textSize="12dp"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="177dp"
+            android:layout_height="180dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp"
+            android:layout_marginStart="20dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:text="Muhammad Amir Fattah"
-                android:textSize="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="learnbygoogling@gmail.com"
-                android:textSize="12dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Absen 24"
-                android:textSize="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+62 882-0033-13142"
-                android:textSize="12dp"/>
-        </LinearLayout>
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/amir"
+                    android:layout_marginStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Muhammad Amir Fattah"
+                    android:textSize="12dp"
+                    android:layout_marginStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="learnbygoogling@gmail.com"
+                    android:textSize="11dp"
+                    android:layout_marginStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Absen 24"
+                    android:textSize="15dp"
+                    android:layout_marginStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+62 882-0033-13142"
+                    android:textSize="12dp"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 
@@ -102,7 +128,6 @@
         android:text="X PPLG 2"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"/>
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>
