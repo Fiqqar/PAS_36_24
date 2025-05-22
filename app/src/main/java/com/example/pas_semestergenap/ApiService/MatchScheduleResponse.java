@@ -5,7 +5,7 @@ import java.util.List;
 public class MatchScheduleResponse {
     private List<MatchScheduleModel> schedule;
 
-    public List<MatchScheduleModel> getTeams() {
+    public List<MatchScheduleModel> getSchedule() {
         return schedule;
     }
 
