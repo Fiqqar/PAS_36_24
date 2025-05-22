@@ -6,9 +6,9 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.example.pas_semestergenap.fragment.DashboardFragment;
-import com.example.pas_semestergenap.fragment.HomeFragment;
-import com.example.pas_semestergenap.fragment.InformationFragment;
+import com.example.pas_semestergenap.Fragment.MatchScheduleFragment;
+import com.example.pas_semestergenap.Fragment.PremiereLeagueFragment;
+import com.example.pas_semestergenap.fragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,19 +24,19 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.frame_layout, new HomeFragment())
+                .replace(R.id.frame_layout, new PremiereLeagueFragment())
                 .commit();
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             Fragment fragment = null;
             int itemId = item.getItemId();
 
-            if (itemId == R.id.nav_home) {
-                fragment = new HomeFragment();
-            } else if (itemId == R.id.nav_dashboard) {
-                fragment = new DashboardFragment();
+            if (itemId == R.id.nav_premier) {
+                fragment = new PremiereLeagueFragment();
+            } else if (itemId == R.id.nav_jadwal) {
+                fragment = new MatchScheduleFragment();
             } else if (itemId == R.id.nav_information) {
-                fragment = new InformationFragment();
+                fragment = new ProfileFragment();
             }
 
             if (fragment != null) {
